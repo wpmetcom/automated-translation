@@ -1,0 +1,31 @@
+{
+    "name": "wpmet/automated-translation",
+    "description": "It uses Google Translator API to translate WP pot files via \"om/potrans\" in batch.",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "bin": ["bin/fire"],
+    "require": {
+        "om/potrans": "^0.0.6",
+        "symfony/console": "^6.3",
+        "symfony/finder": "^6.3",
+        "symfony/filesystem": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wpmetcom\\AutomatedTranslation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Emran",
+            "email": "emranio@yahoo.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
