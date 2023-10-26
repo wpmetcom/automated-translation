@@ -190,7 +190,6 @@ class DefaultCommand extends Command
         $this->pluginHeaders['domainPath'] = $cwd . $this->pluginHeaders['domainPath'];
 
         $this->pluginHeaders['potPath'] = $this->pluginHeaders['domainPath'] . '/' . $this->pluginHeaders['textDomain'] . '.pot';
-        echo $cwd . "\n" . $this->pluginHeaders['domainPath'] . "\n" . $this->pluginHeaders['potPath'];
 
         if (!$filesystem->exists($this->pluginHeaders['potPath'])) {
             throw new \RuntimeException('Language POT file or the directory does not exist in ' . ($this->pluginHeaders['potPath']));
