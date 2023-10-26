@@ -185,10 +185,9 @@ class DefaultCommand extends Command
 
         $this->pluginHeaders['textDomain'] = Helper::trim((string) $this->io->ask('Enter textdomain:', Helper::trim($textDomain[0][1] ?? '')));
 
-        $this->pluginHeaders['domainPath'] = Helper::trim((string) $this->io->ask('Enter languagePath (default: /languages):', Helper::trim($domainPath[0][1] ?? '')));
-        $this->pluginHeaders['domainPath'] = $this->pluginHeaders['domainPath'] ?: $cwd . '/languages';
-        $this->pluginHeaders['domainPath'] = $cwd . $this->pluginHeaders['domainPath'];
+        $this->pluginHeaders['domainPath'] = Helper::trim((string) $this->io->ask('Enter languagePath (default: /languages):', Helper::trim($domainPath[0][1] ?? '/languages')));
 
+        $this->pluginHeaders['domainPath'] = $cwd . $this->pluginHeaders['domainPath'];
 
         $this->pluginHeaders['potPath'] = $this->pluginHeaders['domainPath'] . '/' . $this->pluginHeaders['textDomain'] . '.pot';
         echo $cwd . "\n" . $this->pluginHeaders['domainPath'] . "\n" . $this->pluginHeaders['potPath'];
